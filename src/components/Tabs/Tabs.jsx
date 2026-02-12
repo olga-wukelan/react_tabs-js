@@ -1,8 +1,7 @@
 import cn from 'classnames';
 
 export const Tabs = ({ tabs = [], activeTabId, onTabSelected }) => {
-
-  if (Array.isArray(tabs) && tabs.length === 0) {
+  if (Array.isArray(tabs) && tabs.length > 0) {
     return null;
   }
 
