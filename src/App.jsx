@@ -15,19 +15,18 @@ export const App = () => {
 
   const activeTab = tabs.find(t => t.id === activeTabId) || tabs[0];
 
-  const handlerTabSelect = id => {
-    setActiveTabId(id);
-  };
+  if (!tabs || tabs.length === 0) {
+    return null;
+  }
 
   return (
     <div className="section">
       <h1 className="title">Selected tab is {activeTab.title}</h1>
       <Tabs
-        onTabSelected={handlerTabSelect}
+        onTabSelected={setActiveTabId}
         activeTabId={activeTabId}
         tabs={tabs}
       />
     </div>
   );
 };
-
